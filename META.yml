@@ -1,15 +1,16 @@
 --- #YAML:1.0
 name:                LWP-Protocol-socks
-version:             1.3
+version:             1.4
 abstract:            adds support for the socks protocol and proxy facility
 license:             ~
 author:              
-    - Sheridan Rawlins <scr@corp.yahoo.com>
+    - Sheridan C Rawlins <sheridan.rawlins@yahoo.com>
 generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
-    IO::Socket::Socks:             0.1
+    IO::Socket::Socks:             0.2
     IO::Socket::SSL:               0.96
+    LWP:                           0
 meta-spec:
     url:     http://module-build.sourceforge.net/META-spec-v1.3.html
     version: 1.3

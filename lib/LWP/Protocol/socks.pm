@@ -2,7 +2,7 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.3";
+our $VERSION = "1.4";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
@@ -35,6 +35,11 @@ sub configure {
 
     $self->SUPER::configure($args);
     $self->http_configure($args);
+}
+
+# hack out the connect so it doesn't reconnect
+sub http_connect {
+    1;
 }
 
 ##############################
@@ -155,6 +160,14 @@ Then just use your $ua object as usual!
  my $response = $ua->get("https://www.microsoft.com");
  print $response->code,' ', $response->message,"\n";
 
-=head1 AUTHOR
+=head1 SEE ALSO
 
-Sheridan C Rawlins E<lt>F<scr@yahoo-inc.com>E<gt>
+L<URI::socks>
+
+L<LWP::Protocol::socks4>
+
+=head1 AUTHORS
+
+Sheridan C Rawlins E<lt>F<sheridan.rawlins@yahoo.com>E<gt>
+
+Oleg G E<lt>F<oleg@cpan.org>E<gt>
