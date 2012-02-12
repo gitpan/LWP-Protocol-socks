@@ -2,7 +2,7 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.5";
+our $VERSION = "1.6";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
@@ -33,7 +33,7 @@ sub configure {
     my $connectAddr = $args->{ConnectAddr} = delete $args->{PeerAddr};
     my $connectPort = $args->{ConnectPort} = delete $args->{PeerPort};
 
-    $self->SUPER::configure($args);
+    $self->SUPER::configure($args) or return;
     $self->http_configure($args);
 }
 
@@ -162,6 +162,12 @@ Then just use your $ua object as usual!
  print $response->code,' ', $response->message,"\n";
  my $response = $ua->get("https://www.microsoft.com");
  print $response->code,' ', $response->message,"\n";
+
+=head1 NOTES
+
+I don't have much time to contribute to this.  If you'd like to
+contribute, please fork https://github.com/scr/cpan and send me a pull
+request.
 
 =head1 AUTHORS
 
