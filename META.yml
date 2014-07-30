@@ -1,25 +1,14 @@
---- #YAML:1.0
-name:               LWP-Protocol-socks
-version:            1.6
-abstract:           adds support for the socks protocol and proxy facility
-author:
-    - Sheridan C Rawlins <sheridan.rawlins@yahoo.com>
-license:            unknown
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
-build_requires:
-    ExtUtils::MakeMaker:  0
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         LWP-Protocol-socks
+version:      1.7
+version_from: lib/LWP/Protocol/socks.pm
+installdirs:  site
 requires:
-    IO::Socket::Socks:    0.2
-    IO::Socket::SSL:      0.96
-    LWP:                  6.02
-    LWP::Protocol::https:  6.02
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.56
-meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+    IO::Socket::Socks:             0.2
+    IO::Socket::SSL:               0.96
+    LWP:                           6.02
+    LWP::Protocol::https:          6.02
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.17
